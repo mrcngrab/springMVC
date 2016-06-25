@@ -13,7 +13,7 @@
       <property name="password" value="ziemniak2"/>
    </bean>
    
-      <bean id="userJDBCTemplate" 
+   <bean id="userJDBCTemplate" 
       class="com.dom.logowanie.template.UserJDBCTemplate">
       <property name="dataSource"  ref="dataSource" />    
    </bean>

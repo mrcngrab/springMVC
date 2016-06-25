@@ -17,6 +17,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -34,7 +35,7 @@ public class UserController {
 	public ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
 	public UserService userService = (UserService)context.getBean("userService");
 
-    @RequestMapping(value="/all", method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<User>> listAllUsers() {
         List<User> users = userService.getAllUser();
         if(users.isEmpty()){
@@ -43,8 +44,8 @@ public class UserController {
         return new ResponseEntity<List<User>>(users, HttpStatus.OK);
     }
     
-	@RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<User> getUserWithId(@PathVariable("id") Integer id) {
+	@RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<User> getUserWithId(@RequestParam(value = "id", required = true) Integer id) {
 		User user = userService.getUser(id);
         if (user == null) {
             System.out.println("User with id " + id + " not found");
