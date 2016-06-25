@@ -7,6 +7,6 @@ import com.dom.logowanie.model.User;
 public interface UserDAO {
 
 	public void createUser(String login, String password, String creator);
-	public User getUser(int userId);
+	public User getUser(Integer userId);
 	public List<User> getUsers();
 }

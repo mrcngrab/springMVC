@@ -13,9 +13,15 @@
       <property name="password" value="ziemniak2"/>
    </bean>
    
-      <bean id="UserJDBCTemplate" 
+      <bean id="userJDBCTemplate" 
       class="com.dom.logowanie.template.UserJDBCTemplate">
       <property name="dataSource"  ref="dataSource" />    
    </bean>
+   
+      <bean id="userService" 
+      class="com.dom.logowanie.services.UserService">
+      <property name="userJDBCTemplate"  ref="userJDBCTemplate" />    
+   </bean>
+   
 
 </beans>
