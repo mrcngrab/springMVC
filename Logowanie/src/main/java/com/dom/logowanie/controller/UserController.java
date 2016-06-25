@@ -29,13 +29,13 @@ import com.dom.logowanie.template.UserJDBCTemplate;
  * Handles requests for the application home page.
  */
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/user_service")
 public class UserController {
 		
 	public ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
 	public UserService userService = (UserService)context.getBean("userService");
 
-    @RequestMapping(method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/user",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<User>> listAllUsers() {
         List<User> users = userService.getAllUser();
         if(users.isEmpty()){
@@ -44,8 +44,8 @@ public class UserController {
         return new ResponseEntity<List<User>>(users, HttpStatus.OK);
     }
     
-	@RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<User> getUserWithId(@RequestParam(value = "id", required = true) Integer id) {
+	@RequestMapping(value = "/user/{id}",method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<User> getUserWithId(@PathVariable("id") Integer id) {
 		User user = userService.getUser(id);
         if (user == null) {
             System.out.println("User with id " + id + " not found");
