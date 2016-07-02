@@ -2,6 +2,7 @@ package com.dom.logowanie.services;
 
 import java.util.List;
 import com.dom.logowanie.model.User;
+import com.dom.logowanie.response.UserResponse;
 import com.dom.logowanie.template.UserJDBCTemplate;
 
 public class UserService {
@@ -11,11 +12,22 @@ public class UserService {
 		this.userJDBCTemplate = userJDBCTemplate;
 	}
 	
-	public User getUser(Integer id) {
-		return userJDBCTemplate.getUser(id);
+	
+	public UserResponse getUser(Integer id) {
+		UserResponse userResponse = new UserResponse();
+		userResponse.setStatus(1);
+		userResponse.setMessage("successful");
+		userResponse.setUser(userJDBCTemplate.getUser(id));
+		
+		return userResponse;
 	}
 	
-	public List<User> getAllUser() {
-		return userJDBCTemplate.getUsers();
+	public UserResponse getAllUser() {
+		UserResponse userResponse = new UserResponse();
+		userResponse.setStatus(1);
+		userResponse.setMessage("successful");
+		userResponse.setUsers(userJDBCTemplate.getUsers());
+		
+		return userResponse;
 	}
 }

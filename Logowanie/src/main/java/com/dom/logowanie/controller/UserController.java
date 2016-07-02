@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.dom.logowanie.config.RestConfig;
 import com.dom.logowanie.model.User;
+import com.dom.logowanie.response.UserResponse;
 import com.dom.logowanie.services.UserService;
 
 
@@ -24,31 +25,21 @@ import com.dom.logowanie.services.UserService;
 @RequestMapping("/user")
 public class UserController {
 		
-//	public ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
-//	public UserService userService = (UserService)context.getBean("userService");
 	public ApplicationContext context = new AnnotationConfigApplicationContext(RestConfig.class);
 	public UserService userService = context.getBean(UserService.class);
 
-    @RequestMapping(value = "/",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<User>> listAllUsers() {
-        List<User> users = userService.getAllUser();
-        if(users.isEmpty()){
-            return new ResponseEntity<List<User>>(HttpStatus.NOT_FOUND);
-        }
-        return new ResponseEntity<List<User>>(users, HttpStatus.OK);
-    }
-    
+  @RequestMapping(value = "/",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
+  public ResponseEntity<UserResponse> listAllUsers() {
+	  UserResponse response = userService.getAllUser();
+      return new ResponseEntity<UserResponse>(response, HttpStatus.OK);
+  }
+  
 	@RequestMapping(value = "/{id}",method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<User> getUserWithId(@PathVariable("id") Integer id) {
-		User user = userService.getUser(id);
-        if (user == null) {
-            System.out.println("User with id " + id + " not found");
-            return new ResponseEntity<User>(HttpStatus.NOT_FOUND);
-        }
-	      System.out.println("asdasd");
-        return new ResponseEntity<User>(user, HttpStatus.OK);
-    }
-    
+  public ResponseEntity<UserResponse> getUserWithId(@PathVariable("id") Integer id) {
+		UserResponse response = userService.getUser(id);
+		return new ResponseEntity<UserResponse>(response, HttpStatus.OK);
+  }
+   
 	
 }
 
