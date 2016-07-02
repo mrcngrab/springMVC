@@ -22,7 +22,7 @@ public class UserJDBCTemplate implements UserDAO{
 	
 	@Override
 	public void createUser(String login, String password, String creator) {
-	      String SQL = "insert into User (LOGIN, PASSWORD, SYS_CREATED_BY ) values (?, ?, ?)";
+	      String SQL = "insert into user (LOGIN, PASSWORD, SYS_CREATED_BY ) values (?, ?, ?)";
 	      
 	      jdbcTemplateObject.update( SQL, login, password, creator);
 	      System.out.println("Created Record Name = " + login + " Password = " + password + " SYS_CREATED_BY= " + creator);
@@ -32,7 +32,7 @@ public class UserJDBCTemplate implements UserDAO{
 	   
 	@Override
 	public User getUser(Integer userId) {
-	      String SQL = "select * from User where id = ?";
+	      String SQL = "select * from user where ID = ?";
 	      User user = jdbcTemplateObject.queryForObject(SQL, 
 	                        new Object[]{userId}, new UserMapper());
 	      return user;
@@ -40,7 +40,7 @@ public class UserJDBCTemplate implements UserDAO{
 
 	@Override
 	public List<User> getUsers() {
-	      String SQL = "select * from User";
+	      String SQL = "select * from user";
 	      List <User> users = jdbcTemplateObject.query(SQL, 
 	                                new UserMapper());
 	      return users;

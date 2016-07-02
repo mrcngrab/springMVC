@@ -45,6 +45,7 @@ public class UserController {
             System.out.println("User with id " + id + " not found");
             return new ResponseEntity<User>(HttpStatus.NOT_FOUND);
         }
+	      System.out.println("asdasd");
         return new ResponseEntity<User>(user, HttpStatus.OK);
     }
     

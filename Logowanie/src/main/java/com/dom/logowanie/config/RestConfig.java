@@ -31,8 +31,8 @@ public class RestConfig {
     	DriverManagerDataSource dataSource = new DriverManagerDataSource();
     	dataSource.setDriverClassName("com.mysql.jdbc.Driver");
     	dataSource.setUrl("jdbc:mysql://localhost:3306/Logowanie");
-    	dataSource.setUsername("root");
-    	dataSource.setPassword("ziemniak2");
+    	dataSource.setUsername("logowanie");
+    	dataSource.setPassword("logowanie");
 		return dataSource;
     }
 }
