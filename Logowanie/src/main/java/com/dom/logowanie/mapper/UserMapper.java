@@ -2,9 +2,7 @@ package com.dom.logowanie.mapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
 import org.springframework.jdbc.core.RowMapper;
-
 import com.dom.logowanie.model.User;
 
 public class UserMapper implements RowMapper<User>{
@@ -15,7 +13,7 @@ public class UserMapper implements RowMapper<User>{
 		user.setId(rs.getInt("ID"));
 		user.setLogin(rs.getString("LOGIN"));
 		user.setPassword(rs.getString("PASSWORD"));
-		
+
 		return user;
 	}
 

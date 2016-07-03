@@ -1,7 +1,5 @@
 package com.dom.logowanie.services;
 
-import java.util.List;
-import com.dom.logowanie.model.User;
 import com.dom.logowanie.response.UserResponse;
 import com.dom.logowanie.template.UserJDBCTemplate;
 

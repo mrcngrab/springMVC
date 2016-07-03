@@ -6,7 +6,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
+import com.dom.logowanie.services.BalanceService;
 import com.dom.logowanie.services.UserService;
+import com.dom.logowanie.template.BalanceJDBCTemplate;
 import com.dom.logowanie.template.UserJDBCTemplate;
 
 @Configuration
@@ -24,6 +26,20 @@ public class RestConfig {
 		UserJDBCTemplate userJDBCTemplate = new UserJDBCTemplate();
 		userJDBCTemplate.setDataSource(dataSource);
         return userJDBCTemplate;
+    }
+    
+    @Bean(name="balanceService")
+    public BalanceService balanceService(BalanceJDBCTemplate balanceJDBCTemplate) {
+    	BalanceService balanceService = new BalanceService();
+    	balanceService.setBalanceJDBCTemplate(balanceJDBCTemplate);
+        return balanceService;
+    }
+    
+    @Bean(name="balanceJDBCTemplate")
+    public BalanceJDBCTemplate balanceJDBCTemplate(DataSource dataSource) {
+    	BalanceJDBCTemplate balanceJDBCTemplate = new BalanceJDBCTemplate();
+    	balanceJDBCTemplate.setDataSource(dataSource);
+        return balanceJDBCTemplate;
     }
     
     @Bean(name="dataSource")
