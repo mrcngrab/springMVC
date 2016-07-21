@@ -1,4 +1,4 @@
-package com.dom.logowanie.template;
+package com.dom.logowanie.rest.template;
 
 import java.util.List;
 
@@ -6,9 +6,9 @@ import javax.sql.DataSource;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import com.dom.logowanie.dao.UserDAO;
-import com.dom.logowanie.mapper.UserMapper;
-import com.dom.logowanie.model.User;
+import com.dom.logowanie.rest.dao.UserDAO;
+import com.dom.logowanie.rest.mapper.UserMapper;
+import com.dom.logowanie.rest.model.User;
 
 public class UserJDBCTemplate implements UserDAO{
 	
@@ -31,9 +31,9 @@ public class UserJDBCTemplate implements UserDAO{
 	}
 	   
 	@Override
-	public User getUser(Integer userId) {
+	public List<User> getUser(Integer userId) {
 	      String SQL = "select * from user where ID = ?";
-	      User user = jdbcTemplateObject.queryForObject(SQL, 
+	      List <User> user = jdbcTemplateObject.query(SQL, 
 	                        new Object[]{userId}, new UserMapper());
 	      return user;
 	}

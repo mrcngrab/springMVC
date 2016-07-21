@@ -1,7 +1,7 @@
-package com.dom.logowanie.services;
+package com.dom.logowanie.rest.services;
 
-import com.dom.logowanie.response.UserResponse;
-import com.dom.logowanie.template.UserJDBCTemplate;
+import com.dom.logowanie.rest.response.UserResponse;
+import com.dom.logowanie.rest.template.UserJDBCTemplate;
 
 public class UserService {
 
@@ -15,7 +15,7 @@ public class UserService {
 		UserResponse userResponse = new UserResponse();
 		userResponse.setStatus(1);
 		userResponse.setMessage("successful");
-		userResponse.setUser(userJDBCTemplate.getUser(id));
+		userResponse.setUsers(userJDBCTemplate.getUser(id));
 		
 		return userResponse;
 	}

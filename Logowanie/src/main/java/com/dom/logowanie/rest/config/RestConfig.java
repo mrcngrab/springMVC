@@ -1,4 +1,4 @@
-package com.dom.logowanie.config;
+package com.dom.logowanie.rest.config;
 
 import javax.sql.DataSource;
 
@@ -6,10 +6,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
-import com.dom.logowanie.services.BalanceService;
-import com.dom.logowanie.services.UserService;
-import com.dom.logowanie.template.BalanceJDBCTemplate;
-import com.dom.logowanie.template.UserJDBCTemplate;
+import com.dom.logowanie.rest.services.BalanceService;
+import com.dom.logowanie.rest.services.UserService;
+import com.dom.logowanie.rest.template.BalanceJDBCTemplate;
+import com.dom.logowanie.rest.template.UserJDBCTemplate;
 
 @Configuration
 public class RestConfig {

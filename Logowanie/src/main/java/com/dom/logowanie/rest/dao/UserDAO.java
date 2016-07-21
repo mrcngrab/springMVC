@@ -1,12 +1,12 @@
-package com.dom.logowanie.dao;
+package com.dom.logowanie.rest.dao;
 
 import java.util.List;
 
-import com.dom.logowanie.model.User;
+import com.dom.logowanie.rest.model.User;
 
 public interface UserDAO {
 
 	public void createUser(String login, String password, String creator);
-	public User getUser(Integer userId);
+	public List<User> getUser(Integer userId);
 	public List<User> getUsers();
 }

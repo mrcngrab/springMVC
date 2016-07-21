@@ -1,9 +1,9 @@
-package com.dom.logowanie.mapper;
+package com.dom.logowanie.rest.mapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import org.springframework.jdbc.core.RowMapper;
-import com.dom.logowanie.model.Expense;
+import com.dom.logowanie.rest.model.Expense;
 
 
 public class ExpenseMapper  implements RowMapper<Expense> {

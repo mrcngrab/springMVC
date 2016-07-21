@@ -1,4 +1,4 @@
-package com.dom.logowanie.controller;
+package com.dom.logowanie.rest.controller;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import com.dom.logowanie.config.RestConfig;
-import com.dom.logowanie.response.UserResponse;
-import com.dom.logowanie.services.UserService;
+import com.dom.logowanie.rest.config.RestConfig;
+import com.dom.logowanie.rest.response.UserResponse;
+import com.dom.logowanie.rest.services.UserService;
 
 
 /**

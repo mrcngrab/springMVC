@@ -1,9 +1,9 @@
-package com.dom.logowanie.mapper;
+package com.dom.logowanie.rest.mapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import org.springframework.jdbc.core.RowMapper;
-import com.dom.logowanie.model.User;
+import com.dom.logowanie.rest.model.User;
 
 public class UserMapper implements RowMapper<User>{
 

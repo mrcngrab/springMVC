@@ -1,10 +1,10 @@
-package com.dom.logowanie.dao;
+package com.dom.logowanie.rest.dao;
 
 import java.util.List;
 
-import com.dom.logowanie.model.Balance;
-import com.dom.logowanie.model.Expense;
-import com.dom.logowanie.model.Salary;
+import com.dom.logowanie.rest.model.Balance;
+import com.dom.logowanie.rest.model.Expense;
+import com.dom.logowanie.rest.model.Salary;
 
 public interface BalanceDAO {
 

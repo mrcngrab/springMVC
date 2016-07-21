@@ -1,4 +1,4 @@
-package com.dom.logowanie.template;
+package com.dom.logowanie.rest.template;
 
 import java.util.List;
 
@@ -6,12 +6,12 @@ import javax.sql.DataSource;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import com.dom.logowanie.dao.BalanceDAO;
-import com.dom.logowanie.mapper.ExpenseMapper;
-import com.dom.logowanie.mapper.SalaryMapper;
-import com.dom.logowanie.model.Balance;
-import com.dom.logowanie.model.Expense;
-import com.dom.logowanie.model.Salary;
+import com.dom.logowanie.rest.dao.BalanceDAO;
+import com.dom.logowanie.rest.mapper.ExpenseMapper;
+import com.dom.logowanie.rest.mapper.SalaryMapper;
+import com.dom.logowanie.rest.model.Balance;
+import com.dom.logowanie.rest.model.Expense;
+import com.dom.logowanie.rest.model.Salary;
 
 
 public class BalanceJDBCTemplate implements BalanceDAO{

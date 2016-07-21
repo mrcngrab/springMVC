@@ -1,4 +1,4 @@
-package com.dom.logowanie.model;
+package com.dom.logowanie.rest.model;
 
 import java.util.LinkedList;
 import java.util.List;

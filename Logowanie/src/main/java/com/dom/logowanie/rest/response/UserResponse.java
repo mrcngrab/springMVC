@@ -1,21 +1,12 @@
-package com.dom.logowanie.response;
+package com.dom.logowanie.rest.response;
 
 import java.util.List;
 
-import com.dom.logowanie.model.User;
+import com.dom.logowanie.rest.model.User;
 
 public class UserResponse extends BasicResponse{
 	
-	private User user;
 	private List<User> users;
-	
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
 	
 	public List<User> getUsers() {
 		return users;

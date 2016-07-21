@@ -1,4 +1,4 @@
-package com.dom.logowanie.response;
+package com.dom.logowanie.rest.response;
 
 public class BasicResponse {
 

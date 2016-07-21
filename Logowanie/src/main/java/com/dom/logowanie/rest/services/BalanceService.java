@@ -1,8 +1,8 @@
-package com.dom.logowanie.services;
+package com.dom.logowanie.rest.services;
 
-import com.dom.logowanie.model.Balance;
-import com.dom.logowanie.response.BalanceResponse;
-import com.dom.logowanie.template.BalanceJDBCTemplate;
+import com.dom.logowanie.rest.model.Balance;
+import com.dom.logowanie.rest.response.BalanceResponse;
+import com.dom.logowanie.rest.template.BalanceJDBCTemplate;
 
 
 public class BalanceService {

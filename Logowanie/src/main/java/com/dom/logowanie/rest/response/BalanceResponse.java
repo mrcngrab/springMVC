@@ -1,6 +1,6 @@
-package com.dom.logowanie.response;
+package com.dom.logowanie.rest.response;
 
-import com.dom.logowanie.model.Balance;
+import com.dom.logowanie.rest.model.Balance;
 
 public class BalanceResponse extends BasicResponse {
 	
